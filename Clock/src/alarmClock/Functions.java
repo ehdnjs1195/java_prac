@@ -20,5 +20,9 @@ public class Functions {
 		}
 		System.out.println("");
 	}
+	
+	public void ttl7447(char[] fnd) {
+		
+	}
 
 }
