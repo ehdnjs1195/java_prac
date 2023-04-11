@@ -4,7 +4,7 @@ public class Datatype03 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		char ch='J';
+		char ch='J';	// 문자형 변수 char 2Byte
 		char ch2='a';
 		char ch3='v';
 		char ch4='a';

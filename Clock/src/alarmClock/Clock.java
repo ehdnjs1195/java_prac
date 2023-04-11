@@ -6,7 +6,7 @@ public class Clock {
 		// TODO Auto-generated method stub
 		Functions f = new Functions();
 		
-	    char[][] fnd = {{1, 1, 1, 1, 1, 1, 0}, 
+	    char[][] fnd = {{1, 1, 1, 1, 1, 1, 0}, //0
 	            {0, 1, 1, 0, 0, 0, 0}, 
 	            {1, 1, 0, 1, 1, 0, 1}, 
 	            {1, 1, 1, 1, 0, 0, 1}, 
@@ -20,7 +20,6 @@ public class Clock {
 	    for(int i=0; i<10; i++) {
 	    	f.dispFND(fnd[i]);
 	    }
-	    
 	}
 	
 	
