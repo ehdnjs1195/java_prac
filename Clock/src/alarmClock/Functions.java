@@ -40,17 +40,18 @@ public class Functions {
 		return fnd[n];
 	}
 	
-	static int oldclk;
-	static int number;
-	public int[] ttl7490(int clk) {
+	static int[] oldclk = {0,0,0,0,0,0};
+	static int[] number = {0,0,0,0,0,0};
+	public int[] ttl7490(int dev, int clk) {
 		int[] num = new int[4];
 		
-		if(oldclk == 0 && clk == 1) {
-			if(++number == 10) number = 0;
+		if(oldclk[dev] == 1 && clk == 0) {
+			if(++number[dev] == 10) number[dev] = 0;
 		}
 		
+		oldclk[dev] = clk;
 		for (int i = 0; i < 4; i++) {
-			num[i] = ((number >> i) & 1);
+			num[i] = ((number[dev] >> i) & 1);
 		}
 		
 		return num;
