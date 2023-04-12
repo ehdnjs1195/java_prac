@@ -39,10 +39,20 @@ public class Functions {
 		}
 		return fnd[n];
 	}
-
-	public char[] ttl7490(int clk) {
+	
+	static int oldclk;
+	static int number;
+	public int[] ttl7490(int clk) {
+		int[] num = new int[4];
 		
+		if(oldclk == 0 && clk == 1) {
+			if(++number == 10) number = 0;
+		}
 		
-		return ;
+		for (int i = 0; i < 4; i++) {
+			num[i] = ((number >> i) & 1);
+		}
+		
+		return num;
 	}
 }
