@@ -8,12 +8,14 @@ public class Clock {
 		char fnd[];
 
 		for (int i = 0; i < 100; i++) {
-			if(i/2 == 0) {
-				f.dispFND(f.ttl7447(f.ttl7490(i/2)));
+			f.ttl7490(0, i % 2);
+			if (i % 2 == 0) {
+				f.dispFND(f.ttl7447(f.ttl7490(0, i % 2)));
+				f.dispFND(f.ttl7447(f.ttl7490(1, f.ttl7490(0, i % 2)[3])));
 			}
 
 		}
-		
+
 	}
 
 }
