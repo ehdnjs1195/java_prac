@@ -1,7 +1,21 @@
 package alarmClock;
 
 public class Functions {
-	public void dispFND(char[] fnd) {
+	final int X = 5;
+	final int Y = 40;
+	static char[][] screen = new char[5][40];
+	static int[] num = new int[4];
+	
+	public void dispScreen() {
+		
+		
+		for(int i = 0; i < screen.length; i++) {
+			System.out.println(screen[i]);
+		}
+		System.out.println();
+	}
+	
+	public void dispFND(int x, int y, char[] fnd) {
 		char[][] seg = new char[5][5];
 		for (int i = 0; i < 5; i++)
 			for (int j = 0; j < 5; j++)
@@ -15,13 +29,15 @@ public class Functions {
 		if(fnd[5] == 1) for(int j=0; j<3;j++) seg[j][0] = '#';
 		if(fnd[6] == 1) for(int j=0; j<5;j++) seg[2][j] = '#';
 		
-		for (int i = 0; i < seg.length; i++) {
-			System.out.println(seg[i]);
+		for (int i = 0; i < 5; i++) {
+			for(int j = 0; j < 5; j++) {
+				screen[y + i][x + j] = seg[i][j];
+			}
 		}
-		System.out.println("");
+		
 	}
 	
-	public char[] ttl7447(int[] num) {
+	public char[] ttl7447() {
 		char[][] fnd = {
 				{1, 1, 1, 1, 1, 1, 0}, //0
 	            {0, 1, 1, 0, 0, 0, 0}, //1
@@ -42,8 +58,8 @@ public class Functions {
 	
 	static int[] oldclk = {0,0,0,0,0,0};
 	static int[] number = {0,0,0,0,0,0};
-	public int[] ttl7490(int dev, int clk) {
-		int[] num = new int[4];
+	public void ttl7490(int dev, int clk) {
+
 		
 		if(oldclk[dev] == 1 && clk == 0) {
 			if(++number[dev] == 10) number[dev] = 0;
@@ -54,6 +70,5 @@ public class Functions {
 			num[i] = ((number[dev] >> i) & 1);
 		}
 		
-		return num;
 	}
 }
