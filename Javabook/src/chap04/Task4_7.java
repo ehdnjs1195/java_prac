@@ -22,6 +22,9 @@ public class Task4_7 {
 			case 4:
 				System.out.println("변경합니다.");
 				break;
+			default:
+				System.out.println("잘못 입력하였습니다.");
+				break;
 		}
 	}
 
