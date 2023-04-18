@@ -8,7 +8,6 @@ public class Functions {
 	
 	public void dispScreen() {
 		
-		
 		for(int i = 0; i < screen.length; i++) {
 			System.out.println(screen[i]);
 		}
