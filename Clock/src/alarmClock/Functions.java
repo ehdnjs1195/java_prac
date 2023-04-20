@@ -6,6 +6,8 @@ public class Functions {
 	static char[][] screen = new char[5][40];
 	static int[] num = new int[4];
 	
+	
+	
 	public void dispScreen() {
 		
 		for(int i = 0; i < screen.length; i++) {
@@ -57,14 +59,17 @@ public class Functions {
 	
 	static int[] oldclk = {0,0,0,0,0,0};
 	static int[] number = {0,0,0,0,0,0};
-	public void ttl7490(int dev, int clk) {
-
+	public void ttl7490(int dev, int clk, int r0, int r1) {
 		
-		if(oldclk[dev] == 1 && clk == 0) {
-			if(++number[dev] == 10) number[dev] = 0;
-		}
+		if(r0 == 0 && r1 == 0) {
+			if(oldclk[dev] == 1 && clk == 0) {
+				if(++number[dev] == 10) number[dev] = 0;
+			}
+			oldclk[dev] = clk;
+		} else if (r0 == 1 && r1 == 0) number[dev] = 0;
+		else if (r0 == 0 && r1 == 1) number[dev] = 1;
+		else if (r0 == 1 && r1 == 1) number[dev] = 2;
 		
-		oldclk[dev] = clk;
 		for (int i = 0; i < 4; i++) {
 			num[i] = ((number[dev] >> i) & 1);
 		}

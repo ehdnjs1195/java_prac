@@ -11,31 +11,42 @@ public class Clock {
 				f.screen[i][j] = ' ';
 			}
 		}
-		for (int i = 0; i < 10000; i++) {
+		int i = 0;
+		for (; ;) {
 			
-			f.ttl7490(0, i % 2);
+			f.ttl7490(0, i % 2, 0, 0);
 			if (i % 2 == 0) {
-				f.ttl7490(0, i % 2);
+				f.ttl7490(0, i % 2, 0, 0);
 				f.dispFND(34, 0, f.ttl7447());
 				
-				f.ttl7490(1, f.num[3]);
+				f.ttl7490(1, f.num[3], 0, 0);
 				f.dispFND(28, 0, f.ttl7447());
 				
-				f.ttl7490(2, f.num[3]);
+				if(f.num[2] == 1 && f.num[1] == 1) {
+					f.ttl7490(1, f.num[3], 1, 0);
+					f.dispFND(28, 0, f.ttl7447());
+				}
+				f.ttl7490(2, f.num[2], 0, 0);
 				f.dispFND(22, 0, f.ttl7447());
 
-				f.ttl7490(3, f.num[3]);
+				f.ttl7490(3, f.num[3], 0, 0);
 				f.dispFND(16, 0, f.ttl7447());
 				
-				f.ttl7490(4, f.num[3]);
+				if(f.num[2] == 1 && f.num[1] == 1) {
+					f.ttl7490(3, f.num[3], 1, 0);
+					f.dispFND(16, 0, f.ttl7447());
+				}
+				
+				f.ttl7490(4, f.num[2], 0, 0);
 				f.dispFND(10, 0, f.ttl7447());
 				
-				f.ttl7490(5, f.num[3]);
+				f.ttl7490(5, f.num[3], 0, 0);
 				f.dispFND(4, 0, f.ttl7447());
 				
 				f.dispScreen();
 			}
-
+			
+			i++;
 		}
 
 	}
