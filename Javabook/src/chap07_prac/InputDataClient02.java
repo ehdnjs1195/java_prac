@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 public class InputDataClient02 {
 
 	public static void main(String[] args) {
-		int person = 200; // 인원수를 정하여 초기화.
+		int person = 210; // 인원수를 정하여 초기화.
 
 		InputData inData = new InputData(person); // 인원수를 넘겨주면서 객체를 생성함
 		Page p = new Page(); //페이지 출력을 담당할 클래스
@@ -27,13 +27,15 @@ public class InputDataClient02 {
 		
 		// 출력부분.
 		for (int i = 0; i <= person / inData.pagePerPerson; i++) { // 30명당 한 페이지
+			//페이지의 머리부분 출력단
 			p.printHead(i);
 			
 			int currSum[] = new int[5];
 			int currAvg[] = new int[5];
 			int start = inData.getStartPage(i);	//출력할 페이지의 첫번째 순서
 			int end = inData.getEndPage(i);		//출력할 페이지의 마지막 순서
-			for (int j = start; j < end; j++) { // 반복하면서 출력
+			int j;
+			for (j = start; j < end; j++) { // 반복하면서 출력
 				System.out.println(df.format(j + 1) + "\t" + inData.name[j] + "\t" + inData.kor[j] + "\t"
 						+ inData.eng[j] + "\t" + inData.mat[j] + "\t" + inData.sum[j] + "\t" + inData.avg[j]);
 				currSum[0] += inData.kor[j]; 			//현재페이지 합계
@@ -53,6 +55,9 @@ public class InputDataClient02 {
 			
 			//누적페이지 출력단
 			p.printAllSummary(AllSum, AllAvg);
+			//총 인원이 페이지당 인원으로 딱 나눠 떨어지는 경우 페이지가 하나 더 생기는 오류를 수정하기 위해 
+			//end수가 총 인원수와 같아질 때 반복문을 탈출하도록 수정.
+			if(person == j) break;	 
 		}
 	}
 }
