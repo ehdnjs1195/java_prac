@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 public class InputDataClient02 {
 
 	public static void main(String[] args) {
-		int person = 210; // 인원수를 정하여 초기화.
+		int person = 43; // 인원수를 정하여 초기화.
 
 		InputData inData = new InputData(person); // 인원수를 넘겨주면서 객체를 생성함
 		Page p = new Page(); //페이지 출력을 담당할 클래스

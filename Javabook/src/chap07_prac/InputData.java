@@ -8,7 +8,7 @@ public class InputData { // 데이터를 넣어주는 클래스
 	int mat[];// 수학점수
 	int sum[];// 합계
 	double avg[];// 평균
-	int pagePerPerson = 30; // 페이지당 사람 수
+	int pagePerPerson = 12; // 페이지당 사람 수
 	int startPage;
 	int endPage;
 
