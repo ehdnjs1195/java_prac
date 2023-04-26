@@ -1,5 +1,6 @@
 package chap08;
 
+//GrandFather상속 받기
 public class SubFather extends GrandFather {
 	String familyName = "프로그래머";
 	String houseAddress = "인천";

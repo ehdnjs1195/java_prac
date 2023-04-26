@@ -1,6 +1,8 @@
 package chap08;
 
 class Calculate {
+	//같은 이름으로 여러 형태의 메서드를 작성할 수 있다.
+	//메서드 오버로딩.
 	public int add(int num1, int num2) {
 		return num2 + num2;
 	}

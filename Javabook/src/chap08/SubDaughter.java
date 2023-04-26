@@ -1,5 +1,5 @@
 package chap08;
-
+//SubFather 상속받기
 public class SubDaughter extends SubFather{
 	void printDaughter() {
 		System.out.println("나는 딸램.");

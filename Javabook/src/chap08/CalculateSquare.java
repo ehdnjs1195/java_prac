@@ -1,6 +1,8 @@
 package chap08;
 
 public class CalculateSquare {
+	//동일한 이름을 정의된
+	//여러형태의 메서드. => 메서드 오버로딩
 	public void sqare() {
 		System.out.println("No Parameter Method Called");
 	}

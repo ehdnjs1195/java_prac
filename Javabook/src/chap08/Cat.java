@@ -1,5 +1,5 @@
 package chap08;
-
+//Animal을 상속받음
 public class Cat extends Animal{
 	void meow() {
 		System.out.println("야옹~~");
